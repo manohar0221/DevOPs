@@ -1,0 +1,118 @@
+    1  whoami
+    2  docker
+    3  sudo snap install docker
+    4  docker ps
+    5  sudo docker ps
+    6  docker--vervsion
+    7  docker--version
+    8  docker --version
+    9  systemctl docker status
+   10  systemctl status docker
+   11  sudo systemctl status docker
+   12  systemctl status docker
+   13  sudo service docker status
+   14  docker info
+   15  docker pull nginx
+   16  sudo docker pull nginx
+   17  docker images
+   18  sudo docker images
+   19  sudo docker images
+   20  docker run -it -d 9191:80 nginx:latest
+   21  sudo docker run -it -d 9191:80 nginx:latest
+   22  sudo docker run -it -p 9191:80 nginx:latest
+   23  docker ps
+   24  sudo docker ps
+   25  docker exec -it 98d075ee7910 
+   26  docker exec -it nginx:latest
+   27  docker exec -it nginx:latest ls
+   28  sudo docker exec -it nginx:latest ls
+   29  sudo docker ps
+   30  docker exec -it elated_saha
+   31  docker exec -it elated_saha ls
+   32  sudo docker exec -it elated_saha ls
+   33  ls
+   34  sudo docker exec -it elated_saha /bin/bash
+   35  ls
+   36  cd ..
+   37  ls
+   38  cd raj/
+   39  ls
+   40  cd flask_todo_app/
+   41  pip freeze > requirements.txt
+   42  sudo pip freeze > requirements.txt
+   43  sudo pip freeze >> requirements.txt
+   44  touch requirements.txt
+   45  sudo touch requirements.txt
+   46  ls
+   47  sudo pip freeze > requirements.txt
+   48  whoami
+   49  ls -l
+   50  sudo chown raj:raj requirements.txt 
+   51  sudo pip freeze > requirements.txt
+   52  ls -l
+   53  cat requirements.txt 
+   54  cd ..
+   55  docker ps
+   56  sudo docker ps
+   57  vim Dockerfile
+   58  docker build -it .
+   59  docker build -it alpine .
+   60  docker build -t alpine .
+   61  sudo docker build -t alpine .
+   62  docker images
+   63  sudo docker images
+   64  docker run -it -d 9292:80  alpine /bin/bash
+   65  sudo docker run -it -d 9292:80  alpine /bin/bash
+   66  sudo docker run -it -d 9292:80  alpine /bin/sh
+   67  sudo docker run -it -p 9292:80  alpine /bin/sh
+   68  docker ps
+   69  sudo docker ps
+   70  docker stop 8e473e945f92 98d075ee7910
+   71  sudo docker stop 8e473e945f92 98d075ee7910
+   72  sudo docker ps
+   73  vim Dockerfile 
+   74  ls
+   75  mv Dockerfile flask_todo_app/
+   76  sudo mv Dockerfile flask_todo_app/
+   77  cd flask_todo_app/
+   78  ls
+   79  docker build -t flask_todo_app .
+   80  sudo docker build -t flask_todo_app .
+   81  cat requirements.txt 
+   82  vim requirements.txt 
+   83  sudo docker build -t flask_todo_app .
+   84  docker images
+   85  sudo docker images
+   86  cd ..
+   87  ls
+   88  cd 
+   89  ls
+   90  ls -al
+   91  cd ..
+   92  ls
+   93  cd raj/
+   94  lsd
+   95  ls
+   96  history >> commandshistory.txt
+   97  ls -l
+   98  git clone https://github.com/manohar0221/DevOPs.git
+   99  ls
+  100  git status
+  101  git add commandshistory.txt 
+  102  git status
+  103  git reset test/test2
+  104  git revert test/test2
+  105  git log
+  106  git status
+  107  git restore --staged test/test2
+  108  git status
+  109  git commit -m "history file added for ref" .
+  110  git commit -m "history file added for ref env:dev" .
+  111  git status
+  112  git push
+  113  git branch
+  114  git checkout master
+  115  git branch
+  116  git status
+  117  ls -l
+  118  history >> commandshistory.txt
