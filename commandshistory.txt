@@ -257,3 +257,170 @@
   139  git push origin master
   140  ls -l
   141  history >> commandshistory.txt
+    1  whoami
+    2  docker
+    3  sudo snap install docker
+    4  docker ps
+    5  sudo docker ps
+    6  docker--vervsion
+    7  docker--version
+    8  docker --version
+    9  systemctl docker status
+   10  systemctl status docker
+   11  sudo systemctl status docker
+   12  systemctl status docker
+   13  sudo service docker status
+   14  docker info
+   15  docker pull nginx
+   16  sudo docker pull nginx
+   17  docker images
+   18  sudo docker images
+   19  sudo docker images
+   20  docker run -it -d 9191:80 nginx:latest
+   21  sudo docker run -it -d 9191:80 nginx:latest
+   22  sudo docker run -it -p 9191:80 nginx:latest
+   23  docker ps
+   24  sudo docker ps
+   25  docker exec -it 98d075ee7910 
+   26  docker exec -it nginx:latest
+   27  docker exec -it nginx:latest ls
+   28  sudo docker exec -it nginx:latest ls
+   29  sudo docker ps
+   30  docker exec -it elated_saha
+   31  docker exec -it elated_saha ls
+   32  sudo docker exec -it elated_saha ls
+   33  ls
+   34  sudo docker exec -it elated_saha /bin/bash
+   35  ls
+   36  cd ..
+   37  ls
+   38  cd raj/
+   39  ls
+   40  cd flask_todo_app/
+   41  pip freeze > requirements.txt
+   42  sudo pip freeze > requirements.txt
+   43  sudo pip freeze >> requirements.txt
+   44  touch requirements.txt
+   45  sudo touch requirements.txt
+   46  ls
+   47  sudo pip freeze > requirements.txt
+   48  whoami
+   49  ls -l
+   50  sudo chown raj:raj requirements.txt 
+   51  sudo pip freeze > requirements.txt
+   52  ls -l
+   53  cat requirements.txt 
+   54  cd ..
+   55  docker ps
+   56  sudo docker ps
+   57  vim Dockerfile
+   58  docker build -it .
+   59  docker build -it alpine .
+   60  docker build -t alpine .
+   61  sudo docker build -t alpine .
+   62  docker images
+   63  sudo docker images
+   64  docker run -it -d 9292:80  alpine /bin/bash
+   65  sudo docker run -it -d 9292:80  alpine /bin/bash
+   66  sudo docker run -it -d 9292:80  alpine /bin/sh
+   67  sudo docker run -it -p 9292:80  alpine /bin/sh
+   68  docker ps
+   69  sudo docker ps
+   70  docker stop 8e473e945f92 98d075ee7910
+   71  sudo docker stop 8e473e945f92 98d075ee7910
+   72  sudo docker ps
+   73  vim Dockerfile 
+   74  ls
+   75  mv Dockerfile flask_todo_app/
+   76  sudo mv Dockerfile flask_todo_app/
+   77  cd flask_todo_app/
+   78  ls
+   79  docker build -t flask_todo_app .
+   80  sudo docker build -t flask_todo_app .
+   81  
+   82  vim requirements.txt 
+   83  sudo docker build -t flask_todo_app .
+   84  docker images
+   85  sudo docker images
+   86  cd ..
+   87  ls
+   88  cd 
+   89  ls
+   90  ls -al
+   91  cd ..
+   92  ls
+   93  cd raj/
+   94  lsd
+   95  ls
+   96  history >> commandshistory.txt
+   97  ls -l
+   98  git clone https://github.com/manohar0221/DevOPs.git
+   99  ls
+  100  git status
+  101  git add commandshistory.txt 
+  102  git status
+  103  git reset test/test2
+  104  git revert test/test2
+  105  git log
+  106  git status
+  107  git restore --staged test/test2
+  108  git status
+  109  git commit -m "history file added for ref" .
+  110  git commit -m "history file added for ref env:dev" .
+  111  git status
+  112  git push
+  113  git branch
+  114  git checkout master
+  115  git branch
+  116  git status
+  117  ls -l
+  118  history >> commandshistory.txt
+  119  git add commandshistory.txt 
+  120  git status
+  121  git commit -m "history file added for ref env:dev" .
+  122  git remote -v
+  123  git push
+  124  git push -u origin master
+  125  sudo git push -u origin master
+  126  ping -c 4 github.com
+  127  git config --global http.sslVerify false
+  128  git push origin master
+  129  git push origin master
+  130  git pull
+  131  git push origin master
+  132  git pull origin master
+  133  git status
+  134  git branch
+  135  git commit -m "files added env:dev" .
+  136  git commit -m "files added env:dev"
+  137  git branch
+  138  git status
+  139  git push origin master
+  140  ls -l
+  141  history >> commandshistory.txt
+  142  ls -l
+  143  git add commandshistory.txt 
+  144  git status
+  145  git commit -m "history file added env:dev"
+  146  git push origin master
+  147  ls -l
+  148  cat script
+  149  cat script.sh 
+  150  ls -l
+  151  cd gitfile1 
+  152  cd flask_todo_app/
+  153  ls
+  154  cd 
+  155  ls
+  156  vim crongitpush.sh
+  157  nano crongitpush.sh
+  158  nano crongitpush.sh
+  159  pwd
+  160  ls
+  161  ssh_keygen
+  162  ssh-keygen -t ed25519 -C "raj@gmail.com" -N "" -f ~/.ssh/github_key 
+  163  cat ~/.ssh/github_key.pub
+  164  cat ~/.ssh/github_key
+  165  cat ~/.ssh/github_key.pub
+  166  ls
+  167  history >> commandshistory.txt
