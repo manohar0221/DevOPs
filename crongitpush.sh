@@ -10,3 +10,5 @@ if git commit -m "Appending commands history on $(date '+%Y-%m-%d %H:%M:%S') env
 else
     echo "new commands since last update."
 fi
+# using cronjob -e command and adding this line  * 18 * * * GIT_SSH_COMMAND="ssh -i /home/raj/.ssh/github_key -o StrictHostKeyChecking=no" /bin/bash /home/raj/crongitpush.sh >> /tmp/history_cron.log 2>&1
+
