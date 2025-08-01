@@ -40957,3 +40957,271 @@ nano crongitpush.sh
 ls -l
 nano crongitpush.sh 
 history -a
+whoami
+docker
+sudo snap install docker
+docker ps
+sudo docker ps
+docker--vervsion
+docker--version
+docker --version
+systemctl docker status
+systemctl status docker
+sudo systemctl status docker
+systemctl status docker
+sudo service docker status
+docker info
+docker pull nginx
+sudo docker pull nginx
+docker images
+sudo docker images
+sudo docker images
+docker run -it -d 9191:80 nginx:latest
+sudo docker run -it -d 9191:80 nginx:latest
+sudo docker run -it -p 9191:80 nginx:latest
+docker ps
+sudo docker ps
+docker exec -it 98d075ee7910 
+docker exec -it nginx:latest
+docker exec -it nginx:latest ls
+sudo docker exec -it nginx:latest ls
+sudo docker ps
+docker exec -it elated_saha
+docker exec -it elated_saha ls
+sudo docker exec -it elated_saha ls
+ls
+sudo docker exec -it elated_saha /bin/bash
+ls
+cd ..
+ls
+cd raj/
+ls
+cd flask_todo_app/
+pip freeze > requirements.txt
+sudo pip freeze > requirements.txt
+sudo pip freeze >> requirements.txt
+touch requirements.txt
+sudo touch requirements.txt
+ls
+sudo pip freeze > requirements.txt
+whoami
+ls -l
+sudo chown raj:raj requirements.txt 
+sudo pip freeze > requirements.txt
+ls -l
+cat requirements.txt 
+cd ..
+docker ps
+sudo docker ps
+vim Dockerfile
+docker build -it .
+docker build -it alpine .
+docker build -t alpine .
+sudo docker build -t alpine .
+docker images
+sudo docker images
+docker run -it -d 9292:80  alpine /bin/bash
+sudo docker run -it -d 9292:80  alpine /bin/bash
+sudo docker run -it -d 9292:80  alpine /bin/sh
+sudo docker run -it -p 9292:80  alpine /bin/sh
+docker ps
+sudo docker ps
+docker stop 8e473e945f92 98d075ee7910
+sudo docker stop 8e473e945f92 98d075ee7910
+sudo docker ps
+vim Dockerfile 
+ls
+mv Dockerfile flask_todo_app/
+sudo mv Dockerfile flask_todo_app/
+cd flask_todo_app/
+ls
+docker build -t flask_todo_app .
+sudo docker build -t flask_todo_app .
+
+vim requirements.txt 
+sudo docker build -t flask_todo_app .
+docker images
+sudo docker images
+cd ..
+ls
+cd 
+ls
+ls -al
+cd ..
+ls
+cd raj/
+lsd
+ls
+history >> commandshistory.txt
+ls -l
+git clone https://github.com/manohar0221/DevOPs.git
+ls
+git status
+git add commandshistory.txt 
+git status
+git reset test/test2
+git revert test/test2
+git log
+git status
+git restore --staged test/test2
+git status
+git commit -m "history file added for ref" .
+git commit -m "history file added for ref env:dev" .
+git status
+git push
+git branch
+git checkout master
+git branch
+git status
+ls -l
+history >> commandshistory.txt
+git add commandshistory.txt 
+git status
+git commit -m "history file added for ref env:dev" .
+git remote -v
+git push
+git push -u origin master
+sudo git push -u origin master
+ping -c 4 github.com
+git config --global http.sslVerify false
+git push origin master
+git push origin master
+git pull
+git push origin master
+git pull origin master
+git status
+git branch
+git commit -m "files added env:dev" .
+git commit -m "files added env:dev"
+git branch
+git status
+git push origin master
+ls -l
+history >> commandshistory.txt
+ls -l
+git add commandshistory.txt 
+git status
+git commit -m "history file added env:dev"
+git push origin master
+ls -l
+cat script
+cat script.sh 
+ls -l
+cd gitfile1 
+cd flask_todo_app/
+ls
+cd 
+ls
+vim crongitpush.sh
+nano crongitpush.sh
+nano crongitpush.sh
+pwd
+ls
+ssh_keygen
+ssh-keygen -t ed25519 -C "raj@gmail.com" -N "" -f ~/.ssh/github_key 
+cat ~/.ssh/github_key.pub
+cat ~/.ssh/github_key
+cat ~/.ssh/github_key.pub
+ls
+history >> commandshistory.txt
+git add commandshistory.txt 
+git commit -m "file updated env:dev"
+git push
+git push origin master
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/github_key
+git remote set-url origin git@github.com:manohar0221/DevOPs.git
+ssh -T git@github.com
+git push -u origin master
+nano crongitpush.sh 
+history >> commandshistory.txt
+ls
+crongitpush.sh
+ls
+ls -l
+chmod +x crongitpush.sh 
+./crongitpush.sh 
+nano crongitpush.sh 
+./crongitpush.sh 
+history >> commandshistory.txt
+./crongitpush.sh 
+nano crongitpush.sh 
+vim crongitpush.sh 
+nano crongitpush.sh 
+./crongitpush.sh 
+history >> commandshistory.txt
+./crongitpush.sh 
+history >> commandshistory.txt
+./crongitpush.sh 
+ls
+ls -l
+history >> commandshistory.txt
+./crongitpush.sh 
+nano crongitpush.sh 
+ls -l
+ls
+./crongitpush.sh 
+history
+pwd
+history
+./crongitpush.sh 
+nano crongitpush.sh 
+./crongitpush.sh 
+ls
+./crongitpush.sh 
+nano crongitpush.sh 
+git diff --quiet commandshistory.txt 
+ls -l
+history >> commandshistory.txt
+ls -l
+git diff --quiet commandshistory.txt 
+ls -l
+vim crongitpush.sh 
+nano crongitpush.sh 
+./crongitpush.sh 
+vim crongitpush.sh 
+nano crongitpush.sh 
+./crongitpush.sh 
+ls
+./crongitpush.sh 
+ls -l
+./crongitpush.sh 
+ls -l
+./crongitpush.sh 
+nano crongitpush.sh 
+./crongitpush.sh 
+nano crongitpush.sh 
+vim crongitpush.sh 
+nano crongitpush.sh 
+pwd
+nano crongitpush.sh 
+./crongitpush.sh 
+./crongitpush.sh 
+ls
+./crongitpush.sh 
+ls -l
+nano crongitpush.sh 
+pwd
+./crongitpush.sh 
+cat commandshistory.txt 
+whoami
+./crongitpush.sh 
+ls -l
+ls test/
+rmdir test/
+ls -al test/
+rm -r test/
+./crongitpush.sh 
+nano crongitpush.sh 
+git diff --quiet commandshistory.txt 
+ls -l
+nano crongitpush.sh 
+./crongitpush.sh 
+nano crongitpush.sh 
+./crongitpush.sh 
+pwd
+./crongitpush.sh 
+nano crongitpush.sh 
+ls -l
+nano crongitpush.sh 
+history -a
