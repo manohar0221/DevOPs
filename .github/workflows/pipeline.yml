@@ -22,7 +22,9 @@ jobs:
       - name: Install Trivy
         run: |
           curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh
-          sudo mv trivy /usr/local/bin/
+          sudo mv ./bin/trivy /usr/local/bin/trivy
+          trivy --version
+
 
       - name: Run Trivy Scan
         run: |
