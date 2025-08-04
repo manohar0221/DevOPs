@@ -51,6 +51,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+        with:
+          ref: master   # explicitly checkout master
+          
       - name: Push Docker Image
         if: success() # only if scan passes
         run: |
