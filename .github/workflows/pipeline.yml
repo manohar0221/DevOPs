@@ -1,7 +1,12 @@
 name: Docker Build, Scan, and Push
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # allows manual trigger from GitHub UI
+    inputs:
+      branch:
+        description: "Branch to run the scan on"
+        required: true
+        default: "master"
 
 env:
   IMAGE_NAME: rajmanohar21/hello-sample
