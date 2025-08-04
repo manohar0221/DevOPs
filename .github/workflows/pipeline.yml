@@ -54,4 +54,5 @@ jobs:
       - name: Push Docker Image
         if: success() # only if scan passes
         run: |
+          docker build -t ${{ env.IMAGE_NAME }}:latest helloworld/.
           docker push ${{ env.IMAGE_NAME }}:latest
