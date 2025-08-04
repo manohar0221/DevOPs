@@ -12,7 +12,7 @@ env:
   IMAGE_NAME: rajmanohar21/hello-sample
 
 jobs:
-  build:
+  Docker_Build:
     runs-on: ubuntu-latest
     environment: Dev   # <-- tells Actions to use secrets from Dev env
     steps:
@@ -24,10 +24,10 @@ jobs:
       - name: Build Docker Image
         run: docker build -t ${{ env.IMAGE_NAME }}:latest helloworld/.
 
-  scan:
+  Trivy_Scan:
     runs-on: ubuntu-latest
     environment: Dev
-    needs: build
+    needs: Docker_Build
     steps:
       - name: Install Trivy
         run: |
@@ -39,10 +39,10 @@ jobs:
         run: |
           trivy image --exit-code 1 --severity CRITICAL,HIGH ${{ env.IMAGE_NAME }}:latest
 
-  push:
+  Docker_Push:
     runs-on: ubuntu-latest
     environment: Dev
-    needs: scan
+    needs: Trivy_Scan
     steps:
       - name: Log in to DockerHub
         if: success() # only if scan passes
