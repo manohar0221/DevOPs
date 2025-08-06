@@ -1,4 +1,4 @@
-name: Docker build and Trivy Security Scan
+name: Docker Build, Scan, and Push
 
 on:
   workflow_dispatch:  # allows manual trigger from GitHub UI
@@ -7,20 +7,57 @@ on:
         description: "Branch to run the scan on"
         required: true
         default: "master"
+
+env:
+  IMAGE_NAME: rajmanohar21/hello-sample
+
 jobs:
-  build-and-scan:
+  Docker_Build:
     runs-on: ubuntu-latest
+    environment: Dev   # <-- tells Actions to use secrets from Dev env
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+        with:
+          ref: master   # explicitly checkout master
 
       - name: Build Docker Image
-        run: docker build -t hello-sample:latest /helloworld/.
+        run: docker build -t ${{ env.IMAGE_NAME }}:latest helloworld/.
 
+  Trivy_Scan:
+    runs-on: ubuntu-latest
+    environment: Dev
+    needs: Docker_Build
+    steps:
       - name: Install Trivy
         run: |
           curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh
-          sudo mv trivy /usr/local/bin/
+          sudo mv ./bin/trivy /usr/local/bin/trivy
+          trivy --version
 
       - name: Run Trivy Scan
         run: |
-          trivy image --exit-code 1 --severity CRITICAL hello-sample:latest
+          trivy image --exit-code 1 --severity CRITICAL,HIGH ${{ env.IMAGE_NAME }}:latest
+
+  Docker_Push:
+    runs-on: ubuntu-latest
+    environment: Dev
+    needs: Trivy_Scan
+    steps:
+      - name: Log in to DockerHub
+        if: success() # only if scan passes
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Checkout master branch
+        uses: actions/checkout@v4
+        with:
+          ref: master   # explicitly checkout master
+          
+      - name: Push Docker Image
+        if: success() # only if scan passes
+        run: |
+          docker build -t ${{ env.IMAGE_NAME }}:latest helloworld/.
+          docker push ${{ env.IMAGE_NAME }}:latest
