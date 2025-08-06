@@ -6,7 +6,7 @@ on:
       branch:
         description: "Branch to run the scan on"
         required: true
-        default: "master"
+        default: "main"
 
 env:
   IMAGE_NAME: rajmanohar21/hello-sample
@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: Dev   # <-- tells Actions to use secrets from Dev env
     steps:
-      - name: Checkout master branch
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          ref: master   # explicitly checkout master
+          ref: main   # explicitly checkout main
 
       - name: Build Docker Image
         run: docker build -t ${{ env.IMAGE_NAME }}:latest helloworld/.
@@ -51,10 +51,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Checkout master branch
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          ref: master   # explicitly checkout master
+          ref: main   # explicitly checkout main
           
       - name: Push Docker Image
         if: success() # only if scan passes
