@@ -1,0 +1,164 @@
+## Git Concepts, Examples, and Hooks - Q&A Format
+
+---
+
+### ❓ Q: I didn't understand `rebase`. Even if I want my feature branch changes on top of the latest main branch changes, then if I pull and push also, my commits will sit on top of their changes right?
+
+✅ **A:**
+Yes and no. If you pull changes from `main` into your feature branch and push, Git will merge the histories (creating a **merge commit** if needed). But if you use `git rebase main`, it **reapplies** your feature branch commits **on top** of the latest `main` without a merge commit, making history cleaner.
+
+---
+
+### ❓ Q: employee1 and employee2 took feature branches from main. Employee1 merged to main. If employee2 now pulls and pushes, a new commit ID is created. If instead employee2 rebases, will it look like a single commit?
+
+✅ **A:**
+If employee2 uses `git rebase main` instead of merge, their commits are replayed on top of the latest `main`, avoiding a merge commit. But it still keeps individual commits unless they use `--interactive` mode to squash.
+
+---
+
+### ❓ Q: So merge commit will be removed and replaced with commits?
+
+✅ **A:**
+Yes, rebasing avoids merge commits. It makes your history linear by replaying your commits one-by-one on top of the latest target branch.
+
+---
+
+### ❓ Q: Explain rebase simply
+✅ **A:**
+Imagine you’re writing a story with a friend. Your friend made changes to the story (main branch). You also made changes in your copy (feature branch). `Rebase` means you take your changes and add them **after** your friend’s changes — as if you had waited and then started writing.
+
+---
+
+### ❓ Q: `git cherry-pick` example with output.
+
+✅ **A:**
+```bash
+git log --oneline
+# Output:
+# a3c3d2f (HEAD -> feature) Added logging
+# b4b2f9a Fixed bug
+# c1d2e3f (main) Initial commit
+
+# Cherry-pick the 'Fixed bug' commit
+
+git cherry-pick b4b2f9a
+# Output:
+# [feature] Fixed bug
+# Changes applied and committed.
+```
+
+---
+
+### ❓ Q: How to use a pre-commit hook to require entering `env:dev` or `qa` or `prod` in commit message?
+
+✅ **A:**
+Create `.git/hooks/commit-msg`:
+```bash
+#!/bin/bash
+
+if ! grep -Eq 'env:(dev|qa|prod)' "$1"; then
+  echo "❌ Commit message must include env:dev, env:qa, or env:prod"
+  exit 1
+fi
+```
+Make it executable:
+```bash
+chmod +x .git/hooks/commit-msg
+```
+
+---
+
+### ❓ Q: `git post-merge` example code?
+
+✅ **A:**
+`.git/hooks/post-merge`:
+```bash
+#!/bin/bash
+echo "✅ Merge completed. Running post-merge script..."
+```
+Make it executable:
+```bash
+chmod +x .git/hooks/post-merge
+```
+
+---
+
+### ❓ Q: Is this useful for triggering a pipeline?
+
+✅ **A:**
+No, client-side hooks like `post-merge` run only on your local machine. CI/CD pipelines are triggered by server-side Git events (like GitHub Actions, Azure DevOps, GitLab CI, etc).
+
+---
+
+### ❓ Q: `pre-push`?
+
+✅ **A:**
+`pre-push` is a Git hook that runs **before** code is pushed to remote. Useful to:
+- Run tests
+- Prevent pushing secrets
+- Validate commits
+
+Create it at `.git/hooks/pre-push`.
+
+---
+
+### ❓ Q: Can `pre-push` trigger a pipeline?
+
+❌ **A:**
+No. It runs locally before push. To trigger a CI/CD pipeline, you must push to remote — then the remote server triggers the pipeline.
+
+---
+
+### ❓ Q: Then `post-merge` and `pre-push` do same work?
+
+❌ **A:**
+No. `pre-push` is about **before sending code** to remote. `post-merge` is about **after receiving changes** via pull/merge.
+
+---
+
+### ❓ Q: `commit-msg`?
+
+✅ **A:**
+It’s a hook that runs **after commit is made**, but before it’s finalized. You can validate the commit message content.
+
+---
+
+### ❓ Q: Then `pre-commit` and `commit-msg` are same?
+
+❌ **A:**
+- `pre-commit`: Runs before staging snapshot is committed. You can lint code, block secrets, run tests.
+- `commit-msg`: Runs after commit is created, to validate the message format.
+
+---
+
+### ❓ Q: `git reset --soft`, `--mixed`, `--hard` with example?
+
+✅ **A:**
+Assume 3 commits:
+```bash
+git log --oneline
+C: Commit 3
+B: Commit 2
+A: Commit 1
+```
+
+- `git reset --soft HEAD~1`: Move HEAD to B, keep C's changes staged.
+- `git reset --mixed HEAD~1`: Move HEAD to B, unstage changes (default).
+- `git reset --hard HEAD~1`: Move HEAD to B, delete C's changes from disk and stage.
+
+---
+
+### ❓ Q: Can we prevent secrets being pushed using hooks?
+
+✅ **A:**
+Yes. Use `pre-commit` or `pre-push` hooks.
+Example `pre-commit` script:
+```bash
+#!/bin/bash
+if git diff --cached | grep -E 'AKIA[0-9A-Z]{16}|password|api[_-]?key'; then
+  echo "❌ Secret detected in commit!"
+  exit 1
+fi
+```
+
+Or use `git-secrets` from AWS Labs for advanced detection.
